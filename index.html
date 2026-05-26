@@ -148,72 +148,17 @@
 
 <script>
 const DATA = {
-  "generated_at": "2026-05-26 14:17 UTC",
+  "generated_at": "2026-05-26 14:20 UTC",
   "pool_meta": {
-    "raw_count": 56,
-    "kept": 56,
+    "raw_count": 356,
+    "kept": 356,
     "filter_statuses": [
-      "flagged",
-      "banned"
+      "clean (target users)"
     ],
     "dropped_banned": 0,
     "dropped_text_match": 0
   },
   "cohorts": [
-    {
-      "cohort": "pool_total_flagged_or_banned",
-      "n_users": 56,
-      "total_deposit": 29075.0,
-      "total_withdrawn": 45623.67,
-      "total_bonus_granted": 4228.25,
-      "total_wagered_settled": 35190.03,
-      "total_ggr_proxy": 3480.35,
-      "net_house_pnl_proxy": -20776.92,
-      "promo_cost_per_depositor": 86.29,
-      "avg_turnover": 6.113,
-      "median_turnover": 1.198,
-      "p90_turnover": 10.58,
-      "pct_turnover_lt1": 7.1,
-      "pct_turnover_1_2": 46.4,
-      "pct_turnover_2_5": 8.9,
-      "pct_turnover_5plus": 25.0
-    },
-    {
-      "cohort": "audit_status_banned",
-      "n_users": 32,
-      "total_deposit": 25603.0,
-      "total_withdrawn": 34587.0,
-      "total_bonus_granted": 2850.75,
-      "total_wagered_settled": 29631.28,
-      "total_ggr_proxy": 5891.3,
-      "net_house_pnl_proxy": -11834.75,
-      "promo_cost_per_depositor": 101.81,
-      "avg_turnover": 7.613,
-      "median_turnover": 1.015,
-      "p90_turnover": 33.329,
-      "pct_turnover_lt1": 9.4,
-      "pct_turnover_1_2": 56.2,
-      "pct_turnover_2_5": 0.0,
-      "pct_turnover_5plus": 21.9
-    },
-    {
-      "cohort": "audit_status_flagged",
-      "n_users": 24,
-      "total_deposit": 3472.0,
-      "total_withdrawn": 11036.67,
-      "total_bonus_granted": 1377.5,
-      "total_wagered_settled": 5558.75,
-      "total_ggr_proxy": -2410.95,
-      "net_house_pnl_proxy": -8942.17,
-      "promo_cost_per_depositor": 65.6,
-      "avg_turnover": 4.114,
-      "median_turnover": 2.852,
-      "p90_turnover": 8.51,
-      "pct_turnover_lt1": 4.2,
-      "pct_turnover_1_2": 33.3,
-      "pct_turnover_2_5": 20.8,
-      "pct_turnover_5plus": 29.2
-    },
     {
       "cohort": "target_users_clean_all",
       "n_users": 356,
@@ -233,7 +178,7 @@ const DATA = {
       "pct_turnover_5plus": 27.5
     },
     {
-      "cohort": "target_users_clean_house_positive_subset",
+      "cohort": "target_users_house_positive_subset",
       "n_users": 29,
       "total_deposit": 4899.0,
       "total_withdrawn": 1344.87,
@@ -251,7 +196,7 @@ const DATA = {
       "pct_turnover_5plus": 3.4
     },
     {
-      "cohort": "target_users_clean_house_negative_subset_sharps",
+      "cohort": "target_users_house_negative_subset_sharps",
       "n_users": 20,
       "total_deposit": 13540.0,
       "total_withdrawn": 46851.61,
@@ -269,583 +214,637 @@ const DATA = {
       "pct_turnover_5plus": 20.0
     },
     {
+      "cohort": "comparison_flagged",
+      "n_users": 24,
+      "total_deposit": 3472.0,
+      "total_withdrawn": 11036.67,
+      "total_bonus_granted": 1377.5,
+      "total_wagered_settled": 5558.75,
+      "total_ggr_proxy": -2410.95,
+      "net_house_pnl_proxy": -8942.17,
+      "promo_cost_per_depositor": 65.6,
+      "avg_turnover": 4.114,
+      "median_turnover": 2.852,
+      "p90_turnover": 8.51,
+      "pct_turnover_lt1": 4.2,
+      "pct_turnover_1_2": 33.3,
+      "pct_turnover_2_5": 20.8,
+      "pct_turnover_5plus": 29.2
+    },
+    {
+      "cohort": "comparison_banned",
+      "n_users": 32,
+      "total_deposit": 25603.0,
+      "total_withdrawn": 34587.0,
+      "total_bonus_granted": 2850.75,
+      "total_wagered_settled": 29631.28,
+      "total_ggr_proxy": 5891.3,
+      "net_house_pnl_proxy": -11834.75,
+      "promo_cost_per_depositor": 101.81,
+      "avg_turnover": 7.613,
+      "median_turnover": 1.015,
+      "p90_turnover": 33.329,
+      "pct_turnover_lt1": 9.4,
+      "pct_turnover_1_2": 56.2,
+      "pct_turnover_2_5": 0.0,
+      "pct_turnover_5plus": 21.9
+    },
+    {
       "cohort": "flagged_first_dep_2025-10",
       "n_users": 1,
       "total_deposit": 2.0,
       "total_withdrawn": 0,
-      "total_bonus_granted": 16.0,
-      "total_wagered_settled": 5.0,
-      "total_ggr_proxy": 5.0,
-      "net_house_pnl_proxy": -14.0,
-      "promo_cost_per_depositor": 16.0,
-      "avg_turnover": 2.5,
-      "median_turnover": 2.5,
-      "p90_turnover": 2.5,
-      "pct_turnover_lt1": 0.0,
+      "total_bonus_granted": 56.0,
+      "total_wagered_settled": 0,
+      "total_ggr_proxy": 0,
+      "net_house_pnl_proxy": -54.0,
+      "promo_cost_per_depositor": 56.0,
+      "avg_turnover": 0.0,
+      "median_turnover": 0.0,
+      "p90_turnover": 0.0,
+      "pct_turnover_lt1": 100.0,
       "pct_turnover_1_2": 0.0,
-      "pct_turnover_2_5": 100.0,
+      "pct_turnover_2_5": 0.0,
+      "pct_turnover_5plus": 0.0
+    },
+    {
+      "cohort": "flagged_first_dep_2025-11",
+      "n_users": 1,
+      "total_deposit": 4.0,
+      "total_withdrawn": 0,
+      "total_bonus_granted": 5.0,
+      "total_wagered_settled": 0,
+      "total_ggr_proxy": 0,
+      "net_house_pnl_proxy": -1.0,
+      "promo_cost_per_depositor": 5.0,
+      "avg_turnover": 0.0,
+      "median_turnover": 0.0,
+      "p90_turnover": 0.0,
+      "pct_turnover_lt1": 100.0,
+      "pct_turnover_1_2": 0.0,
+      "pct_turnover_2_5": 0.0,
       "pct_turnover_5plus": 0.0
     },
     {
       "cohort": "flagged_first_dep_2025-12",
-      "n_users": 3,
-      "total_deposit": 510.0,
-      "total_withdrawn": 2771.94,
-      "total_bonus_granted": 324.0,
-      "total_wagered_settled": 934.08,
-      "total_ggr_proxy": 144.83,
-      "net_house_pnl_proxy": -2585.94,
-      "promo_cost_per_depositor": 108.0,
-      "avg_turnover": 4.559,
-      "median_turnover": 1.728,
-      "p90_turnover": 10.58,
-      "pct_turnover_lt1": 0.0,
-      "pct_turnover_1_2": 66.7,
-      "pct_turnover_2_5": 0.0,
+      "n_users": 36,
+      "total_deposit": 5176.0,
+      "total_withdrawn": 24694.32,
+      "total_bonus_granted": 1589.14,
+      "total_wagered_settled": 19049.8,
+      "total_ggr_proxy": -11353.16,
+      "net_house_pnl_proxy": -21107.46,
+      "promo_cost_per_depositor": 44.14,
+      "avg_turnover": 8.326,
+      "median_turnover": 1.325,
+      "p90_turnover": 9.262,
+      "pct_turnover_lt1": 22.2,
+      "pct_turnover_1_2": 33.3,
+      "pct_turnover_2_5": 11.1,
       "pct_turnover_5plus": 33.3
     },
     {
       "cohort": "flagged_first_dep_2026-01",
-      "n_users": 4,
-      "total_deposit": 3217.0,
-      "total_withdrawn": 3939.0,
-      "total_bonus_granted": 978.0,
-      "total_wagered_settled": 4387.93,
-      "total_ggr_proxy": 1031.28,
-      "net_house_pnl_proxy": -1700.0,
-      "promo_cost_per_depositor": 244.5,
-      "avg_turnover": 3.996,
-      "median_turnover": 3.684,
-      "p90_turnover": 7.418,
+      "n_users": 29,
+      "total_deposit": 3832.0,
+      "total_withdrawn": 14569.15,
+      "total_bonus_granted": 1216.0,
+      "total_wagered_settled": 16838.02,
+      "total_ggr_proxy": -358.2,
+      "net_house_pnl_proxy": -11953.15,
+      "promo_cost_per_depositor": 41.93,
+      "avg_turnover": 4.758,
+      "median_turnover": 1.941,
+      "p90_turnover": 12.58,
       "pct_turnover_lt1": 0.0,
-      "pct_turnover_1_2": 50.0,
-      "pct_turnover_2_5": 0.0,
-      "pct_turnover_5plus": 50.0
+      "pct_turnover_1_2": 51.7,
+      "pct_turnover_2_5": 20.7,
+      "pct_turnover_5plus": 27.6
     },
     {
       "cohort": "flagged_first_dep_2026-02",
-      "n_users": 14,
-      "total_deposit": 365.0,
-      "total_withdrawn": 2285.0,
-      "total_bonus_granted": 1903.0,
-      "total_wagered_settled": 3083.64,
-      "total_ggr_proxy": 50.27,
-      "net_house_pnl_proxy": -3823.0,
-      "promo_cost_per_depositor": 135.93,
-      "avg_turnover": 16.775,
-      "median_turnover": 6.726,
-      "p90_turnover": 46.875,
-      "pct_turnover_lt1": 0.0,
-      "pct_turnover_1_2": 7.1,
-      "pct_turnover_2_5": 21.4,
-      "pct_turnover_5plus": 71.4
+      "n_users": 147,
+      "total_deposit": 4967.0,
+      "total_withdrawn": 11970.0,
+      "total_bonus_granted": 7448.5,
+      "total_wagered_settled": 16342.67,
+      "total_ggr_proxy": 1203.35,
+      "net_house_pnl_proxy": -14451.5,
+      "promo_cost_per_depositor": 50.67,
+      "avg_turnover": 6.286,
+      "median_turnover": 3.2,
+      "p90_turnover": 8.921,
+      "pct_turnover_lt1": 3.4,
+      "pct_turnover_1_2": 31.3,
+      "pct_turnover_2_5": 21.8,
+      "pct_turnover_5plus": 43.5
     },
     {
       "cohort": "flagged_first_dep_2026-03",
-      "n_users": 5,
-      "total_deposit": 3556.0,
-      "total_withdrawn": 15105.0,
-      "total_bonus_granted": 56.25,
-      "total_wagered_settled": 4464.91,
-      "total_ggr_proxy": -2722.86,
-      "net_house_pnl_proxy": -11605.25,
-      "promo_cost_per_depositor": 11.25,
-      "avg_turnover": 2.034,
-      "median_turnover": 1.192,
-      "p90_turnover": 5.08,
-      "pct_turnover_lt1": 0.0,
-      "pct_turnover_1_2": 80.0,
-      "pct_turnover_2_5": 0.0,
-      "pct_turnover_5plus": 20.0
+      "n_users": 33,
+      "total_deposit": 7893.0,
+      "total_withdrawn": 17999.0,
+      "total_bonus_granted": 920.25,
+      "total_wagered_settled": 39571.35,
+      "total_ggr_proxy": -2332.34,
+      "net_house_pnl_proxy": -11026.25,
+      "promo_cost_per_depositor": 27.89,
+      "avg_turnover": 3.315,
+      "median_turnover": 1.231,
+      "p90_turnover": 7.085,
+      "pct_turnover_lt1": 3.0,
+      "pct_turnover_1_2": 66.7,
+      "pct_turnover_2_5": 3.0,
+      "pct_turnover_5plus": 27.3
     },
     {
       "cohort": "flagged_first_dep_2026-04",
-      "n_users": 6,
-      "total_deposit": 14060.0,
-      "total_withdrawn": 11878.0,
-      "total_bonus_granted": 55.5,
-      "total_wagered_settled": 14072.24,
-      "total_ggr_proxy": 3432.68,
-      "net_house_pnl_proxy": 2126.5,
-      "promo_cost_per_depositor": 9.25,
-      "avg_turnover": 1.004,
-      "median_turnover": 1.008,
-      "p90_turnover": 1.023,
-      "pct_turnover_lt1": 16.7,
-      "pct_turnover_1_2": 83.3,
-      "pct_turnover_2_5": 0.0,
-      "pct_turnover_5plus": 0.0
+      "n_users": 46,
+      "total_deposit": 9810.0,
+      "total_withdrawn": 13915.0,
+      "total_bonus_granted": 734.0,
+      "total_wagered_settled": 14201.91,
+      "total_ggr_proxy": -3213.34,
+      "net_house_pnl_proxy": -4839.0,
+      "promo_cost_per_depositor": 15.96,
+      "avg_turnover": 1.662,
+      "median_turnover": 1.167,
+      "p90_turnover": 3.0,
+      "pct_turnover_lt1": 10.9,
+      "pct_turnover_1_2": 67.4,
+      "pct_turnover_2_5": 19.6,
+      "pct_turnover_5plus": 2.2
     },
     {
       "cohort": "flagged_first_dep_2026-05",
-      "n_users": 16,
-      "total_deposit": 7365.0,
-      "total_withdrawn": 8608.0,
-      "total_bonus_granted": 87.75,
-      "total_wagered_settled": 7362.24,
-      "total_ggr_proxy": 1738.89,
-      "net_house_pnl_proxy": -1330.75,
-      "promo_cost_per_depositor": 5.48,
-      "avg_turnover": 1.022,
-      "median_turnover": 1.0,
-      "p90_turnover": 1.147,
-      "pct_turnover_lt1": 18.8,
-      "pct_turnover_1_2": 75.0,
-      "pct_turnover_2_5": 6.2,
-      "pct_turnover_5plus": 0.0
+      "n_users": 62,
+      "total_deposit": 5425.0,
+      "total_withdrawn": 8837.0,
+      "total_bonus_granted": 766.0,
+      "total_wagered_settled": 10098.61,
+      "total_ggr_proxy": -2510.54,
+      "net_house_pnl_proxy": -4178.0,
+      "promo_cost_per_depositor": 12.35,
+      "avg_turnover": 2.925,
+      "median_turnover": 1.3,
+      "p90_turnover": 4.032,
+      "pct_turnover_lt1": 12.9,
+      "pct_turnover_1_2": 48.4,
+      "pct_turnover_2_5": 32.3,
+      "pct_turnover_5plus": 6.5
     }
   ],
   "win_cadence": {
     "1h": {
-      "bet": 26.490066225165563,
+      "bet": 34.193548387096776,
       "deposit": 0.0,
-      "withdrawal": 42.71523178807947,
-      "inactive": 30.79470198675497,
-      "n": 302
+      "withdrawal": 11.32616487455197,
+      "inactive": 54.48028673835126,
+      "n": 1395
     },
     "6h": {
-      "bet": 22.8476821192053,
-      "deposit": 1.6556291390728477,
-      "withdrawal": 60.264900662251655,
-      "inactive": 15.2317880794702,
-      "n": 302
+      "bet": 51.32616487455197,
+      "deposit": 0.9318996415770611,
+      "withdrawal": 18.2078853046595,
+      "inactive": 29.53405017921147,
+      "n": 1395
     },
     "24h": {
-      "bet": 22.8476821192053,
-      "deposit": 1.3245033112582782,
-      "withdrawal": 68.54304635761589,
-      "inactive": 7.28476821192053,
-      "n": 302
+      "bet": 53.97849462365591,
+      "deposit": 2.867383512544803,
+      "withdrawal": 30.25089605734767,
+      "inactive": 12.903225806451612,
+      "n": 1395
     },
     "72h": {
-      "bet": 19.205298013245034,
-      "deposit": 0.9933774834437087,
-      "withdrawal": 75.16556291390728,
-      "inactive": 4.635761589403973,
-      "n": 302
+      "bet": 44.44444444444444,
+      "deposit": 3.870967741935484,
+      "withdrawal": 44.87455197132616,
+      "inactive": 6.810035842293908,
+      "n": 1395
     },
     "7d": {
-      "bet": 18.211920529801322,
-      "deposit": 0.6622516556291391,
-      "withdrawal": 77.81456953642383,
-      "inactive": 3.3112582781456954,
-      "n": 302
+      "bet": 36.48745519713262,
+      "deposit": 4.444444444444445,
+      "withdrawal": 54.623655913978496,
+      "inactive": 4.444444444444445,
+      "n": 1395
     }
   },
   "loss_cadence": {
     "1h": {
-      "bet": 24.14814814814815,
-      "deposit": 1.1851851851851851,
-      "withdrawal": 18.51851851851852,
-      "inactive": 56.148148148148145,
-      "n": 675
+      "bet": 34.527687296416936,
+      "deposit": 0.32573289902280134,
+      "withdrawal": 4.737933076695292,
+      "inactive": 60.40864672786497,
+      "n": 3377
     },
     "6h": {
-      "bet": 29.333333333333332,
-      "deposit": 2.666666666666667,
-      "withdrawal": 26.51851851851852,
-      "inactive": 41.48148148148148,
-      "n": 675
+      "bet": 44.181225940183595,
+      "deposit": 1.036422860527095,
+      "withdrawal": 7.9952620669233045,
+      "inactive": 46.787089132366006,
+      "n": 3377
     },
     "24h": {
-      "bet": 40.2962962962963,
-      "deposit": 5.333333333333334,
-      "withdrawal": 32.148148148148145,
-      "inactive": 22.22222222222222,
-      "n": 675
+      "bet": 52.47260882440036,
+      "deposit": 5.41901095647024,
+      "withdrawal": 13.473497186852235,
+      "inactive": 28.63488303227717,
+      "n": 3377
     },
     "72h": {
-      "bet": 41.48148148148148,
-      "deposit": 2.666666666666667,
-      "withdrawal": 45.48148148148148,
-      "inactive": 10.37037037037037,
-      "n": 675
+      "bet": 54.16049748297306,
+      "deposit": 6.573882143914717,
+      "withdrawal": 21.79449215279834,
+      "inactive": 17.47112822031389,
+      "n": 3377
     },
     "7d": {
-      "bet": 37.03703703703704,
-      "deposit": 2.814814814814815,
-      "withdrawal": 52.44444444444445,
-      "inactive": 7.703703703703704,
-      "n": 675
+      "bet": 50.192478531240745,
+      "deposit": 11.341427302339355,
+      "withdrawal": 26.56203731122298,
+      "inactive": 11.90405685519692,
+      "n": 3377
     }
   },
   "up_thresholds": {
     "1.0": {
       "1h": {
-        "bet": 6.666666666666667,
+        "bet": 23.376623376623375,
         "deposit": 0.0,
-        "withdrawal": 33.33333333333333,
-        "inactive": 60.0,
-        "avg_amt_wd": 61.4,
-        "avg_amt_bet": 0.392,
-        "n": 15
+        "withdrawal": 19.480519480519483,
+        "inactive": 57.14285714285714,
+        "avg_amt_wd": 35.18181818181818,
+        "avg_amt_bet": 3.2675324675324675,
+        "n": 77
       },
       "6h": {
-        "bet": 13.333333333333334,
-        "deposit": 0.0,
-        "withdrawal": 46.666666666666664,
-        "inactive": 40.0,
-        "avg_amt_wd": 143.26666666666668,
-        "avg_amt_bet": 9.242666666666667,
-        "n": 15
+        "bet": 28.57142857142857,
+        "deposit": 1.2987012987012987,
+        "withdrawal": 36.36363636363637,
+        "inactive": 33.76623376623377,
+        "avg_amt_wd": 62.298701298701296,
+        "avg_amt_bet": 20.956363636363633,
+        "n": 77
       },
       "24h": {
-        "bet": 26.666666666666668,
-        "deposit": 0.0,
-        "withdrawal": 53.333333333333336,
-        "inactive": 20.0,
-        "avg_amt_wd": 190.53333333333333,
-        "avg_amt_bet": 119.37599999999999,
-        "n": 15
+        "bet": 29.87012987012987,
+        "deposit": 1.2987012987012987,
+        "withdrawal": 50.649350649350644,
+        "inactive": 18.181818181818183,
+        "avg_amt_wd": 162.12987012987014,
+        "avg_amt_bet": 57.31922077922078,
+        "n": 77
       },
       "72h": {
-        "bet": 26.666666666666668,
+        "bet": 18.181818181818183,
         "deposit": 0.0,
-        "withdrawal": 66.66666666666666,
-        "inactive": 6.666666666666667,
-        "avg_amt_wd": 721.996,
-        "avg_amt_bet": 278.18624714903945,
-        "n": 15
+        "withdrawal": 68.83116883116884,
+        "inactive": 12.987012987012985,
+        "avg_amt_wd": 264.3746753246753,
+        "avg_amt_bet": 165.4056696688863,
+        "n": 77
       },
       "7d": {
-        "bet": 26.666666666666668,
+        "bet": 16.883116883116884,
         "deposit": 0.0,
-        "withdrawal": 66.66666666666666,
-        "inactive": 6.666666666666667,
-        "avg_amt_wd": 744.3960000000001,
-        "avg_amt_bet": 368.6984922015019,
-        "n": 15
+        "withdrawal": 75.32467532467533,
+        "inactive": 7.792207792207792,
+        "avg_amt_wd": 492.30857142857144,
+        "avg_amt_bet": 298.4948904481072,
+        "n": 77
       }
     },
     "2.0": {
       "1h": {
-        "bet": 0.0,
+        "bet": 22.58064516129032,
         "deposit": 0.0,
-        "withdrawal": 30.0,
-        "inactive": 70.0,
-        "avg_amt_wd": 61.7,
-        "avg_amt_bet": 0.588,
-        "n": 10
+        "withdrawal": 20.967741935483872,
+        "inactive": 56.451612903225815,
+        "avg_amt_wd": 32.299677419354836,
+        "avg_amt_bet": 3.1129032258064515,
+        "n": 62
       },
       "6h": {
-        "bet": 10.0,
-        "deposit": 0.0,
-        "withdrawal": 40.0,
-        "inactive": 50.0,
-        "avg_amt_wd": 66.7,
-        "avg_amt_bet": 13.863999999999999,
-        "n": 10
+        "bet": 22.58064516129032,
+        "deposit": 1.6129032258064515,
+        "withdrawal": 38.70967741935484,
+        "inactive": 37.096774193548384,
+        "avg_amt_wd": 62.63274193548387,
+        "avg_amt_bet": 14.244838709677419,
+        "n": 62
       },
       "24h": {
-        "bet": 30.0,
-        "deposit": 0.0,
-        "withdrawal": 50.0,
-        "inactive": 20.0,
-        "avg_amt_wd": 342.394,
-        "avg_amt_bet": 124.90299999999998,
-        "n": 10
+        "bet": 25.806451612903224,
+        "deposit": 1.6129032258064515,
+        "withdrawal": 56.451612903225815,
+        "inactive": 16.129032258064516,
+        "avg_amt_wd": 143.3932258064516,
+        "avg_amt_bet": 75.23080645161292,
+        "n": 62
       },
       "72h": {
-        "bet": 30.0,
+        "bet": 20.967741935483872,
         "deposit": 0.0,
-        "withdrawal": 60.0,
-        "inactive": 10.0,
-        "avg_amt_wd": 781.7940000000001,
-        "avg_amt_bet": 180.69536757869363,
-        "n": 10
+        "withdrawal": 67.74193548387096,
+        "inactive": 11.29032258064516,
+        "avg_amt_wd": 207.68870967741933,
+        "avg_amt_bet": 213.13241935483873,
+        "n": 62
       },
       "7d": {
-        "bet": 30.0,
+        "bet": 19.35483870967742,
         "deposit": 0.0,
-        "withdrawal": 60.0,
-        "inactive": 10.0,
-        "avg_amt_wd": 781.7940000000001,
-        "avg_amt_bet": 180.99536757869365,
-        "n": 10
+        "withdrawal": 72.58064516129032,
+        "inactive": 8.064516129032258,
+        "avg_amt_wd": 457.4187096774194,
+        "avg_amt_bet": 313.3879991271691,
+        "n": 62
       }
     },
     "3.0": {
       "1h": {
-        "bet": 0.0,
+        "bet": 21.73913043478261,
         "deposit": 0.0,
-        "withdrawal": 28.57142857142857,
-        "inactive": 71.42857142857143,
-        "avg_amt_wd": 32.42857142857143,
-        "avg_amt_bet": 0.0,
-        "n": 7
+        "withdrawal": 19.565217391304348,
+        "inactive": 58.69565217391305,
+        "avg_amt_wd": 43.31695652173913,
+        "avg_amt_bet": 2.239130434782609,
+        "n": 46
       },
       "6h": {
-        "bet": 0.0,
+        "bet": 17.391304347826086,
         "deposit": 0.0,
-        "withdrawal": 28.57142857142857,
-        "inactive": 71.42857142857143,
-        "avg_amt_wd": 32.42857142857143,
-        "avg_amt_bet": 0.0,
-        "n": 7
+        "withdrawal": 39.130434782608695,
+        "inactive": 43.47826086956522,
+        "avg_amt_wd": 70.93978260869565,
+        "avg_amt_bet": 5.118695652173913,
+        "n": 46
       },
       "24h": {
-        "bet": 28.57142857142857,
+        "bet": 26.08695652173913,
         "deposit": 0.0,
-        "withdrawal": 42.857142857142854,
-        "inactive": 28.57142857142857,
-        "avg_amt_wd": 426.27714285714285,
-        "avg_amt_bet": 154.76999999999998,
-        "n": 7
+        "withdrawal": 60.86956521739131,
+        "inactive": 13.043478260869565,
+        "avg_amt_wd": 254.73891304347825,
+        "avg_amt_bet": 87.24108695652174,
+        "n": 46
       },
       "72h": {
-        "bet": 28.57142857142857,
+        "bet": 19.565217391304348,
         "deposit": 0.0,
-        "withdrawal": 57.14285714285714,
-        "inactive": 14.285714285714285,
-        "avg_amt_wd": 1053.9914285714287,
-        "avg_amt_bet": 231.38623939813377,
-        "n": 7
+        "withdrawal": 71.73913043478261,
+        "inactive": 8.695652173913043,
+        "avg_amt_wd": 324.4632608695652,
+        "avg_amt_bet": 223.52152173913046,
+        "n": 46
       },
       "7d": {
-        "bet": 28.57142857142857,
+        "bet": 19.565217391304348,
         "deposit": 0.0,
-        "withdrawal": 57.14285714285714,
-        "inactive": 14.285714285714285,
-        "avg_amt_wd": 1053.9914285714287,
-        "avg_amt_bet": 231.67195368384805,
-        "n": 7
+        "withdrawal": 76.08695652173914,
+        "inactive": 4.3478260869565215,
+        "avg_amt_wd": 559.6513043478261,
+        "avg_amt_bet": 285.20491186705397,
+        "n": 46
       }
     },
     "4.0": {
       "1h": {
-        "bet": 0.0,
+        "bet": 29.72972972972973,
         "deposit": 0.0,
-        "withdrawal": 28.57142857142857,
-        "inactive": 71.42857142857143,
-        "avg_amt_wd": 32.42857142857143,
-        "avg_amt_bet": 0.0,
-        "n": 7
+        "withdrawal": 13.513513513513514,
+        "inactive": 56.75675675675676,
+        "avg_amt_wd": 22.216216216216218,
+        "avg_amt_bet": 25.45945945945946,
+        "n": 37
       },
       "6h": {
-        "bet": 0.0,
-        "deposit": 0.0,
-        "withdrawal": 28.57142857142857,
-        "inactive": 71.42857142857143,
-        "avg_amt_wd": 32.42857142857143,
-        "avg_amt_bet": 0.0,
-        "n": 7
+        "bet": 24.324324324324326,
+        "deposit": 2.7027027027027026,
+        "withdrawal": 35.13513513513514,
+        "inactive": 37.83783783783784,
+        "avg_amt_wd": 55.20675675675676,
+        "avg_amt_bet": 57.773783783783784,
+        "n": 37
       },
       "24h": {
-        "bet": 28.57142857142857,
+        "bet": 27.027027027027028,
         "deposit": 0.0,
-        "withdrawal": 42.857142857142854,
-        "inactive": 28.57142857142857,
-        "avg_amt_wd": 426.27714285714285,
-        "avg_amt_bet": 154.76999999999998,
-        "n": 7
+        "withdrawal": 62.16216216216216,
+        "inactive": 10.81081081081081,
+        "avg_amt_wd": 165.01756756756757,
+        "avg_amt_bet": 136.40432432432434,
+        "n": 37
       },
       "72h": {
-        "bet": 28.57142857142857,
+        "bet": 18.91891891891892,
         "deposit": 0.0,
-        "withdrawal": 57.14285714285714,
-        "inactive": 14.285714285714285,
-        "avg_amt_wd": 1053.9914285714287,
-        "avg_amt_bet": 231.38623939813377,
-        "n": 7
+        "withdrawal": 72.97297297297297,
+        "inactive": 8.108108108108109,
+        "avg_amt_wd": 239.67486486486484,
+        "avg_amt_bet": 246.54756756756757,
+        "n": 37
       },
       "7d": {
-        "bet": 28.57142857142857,
-        "deposit": 0.0,
-        "withdrawal": 57.14285714285714,
-        "inactive": 14.285714285714285,
-        "avg_amt_wd": 1053.9914285714287,
-        "avg_amt_bet": 231.67195368384805,
-        "n": 7
+        "bet": 16.216216216216218,
+        "deposit": 2.7027027027027026,
+        "withdrawal": 78.37837837837837,
+        "inactive": 2.7027027027027026,
+        "avg_amt_wd": 532.0708108108108,
+        "avg_amt_bet": 330.26783783783793,
+        "n": 37
       }
     }
   },
   "down_thresholds": {
     "0.25": {
       "1h": {
-        "bet": 39.58333333333333,
-        "deposit": 10.416666666666668,
-        "withdrawal": 2.083333333333333,
-        "inactive": 47.91666666666667,
-        "avg_amt_wd": 0.10416666666666667,
-        "avg_amt_bet": 48.265625,
-        "n": 48
+        "bet": 40.49844236760124,
+        "deposit": 1.557632398753894,
+        "withdrawal": 0.3115264797507788,
+        "inactive": 57.63239875389408,
+        "avg_amt_wd": 0.21806853582554517,
+        "avg_amt_bet": 20.818971962616825,
+        "n": 321
       },
       "6h": {
-        "bet": 50.0,
-        "deposit": 12.5,
-        "withdrawal": 12.5,
-        "inactive": 25.0,
-        "avg_amt_wd": 21.75,
-        "avg_amt_bet": 55.23,
-        "n": 48
+        "bet": 67.28971962616822,
+        "deposit": 3.4267912772585665,
+        "withdrawal": 4.361370716510903,
+        "inactive": 24.922118380062305,
+        "avg_amt_wd": 6.133956386292835,
+        "avg_amt_bet": 27.196573208722743,
+        "n": 321
       },
       "24h": {
-        "bet": 56.25,
-        "deposit": 10.416666666666668,
-        "withdrawal": 25.0,
-        "inactive": 8.333333333333332,
-        "avg_amt_wd": 71.875,
-        "avg_amt_bet": 101.67645833333331,
-        "n": 48
+        "bet": 76.01246105919003,
+        "deposit": 3.7383177570093453,
+        "withdrawal": 13.084112149532709,
+        "inactive": 7.165109034267912,
+        "avg_amt_wd": 22.077881619937695,
+        "avg_amt_bet": 34.577009345794394,
+        "n": 321
       },
       "72h": {
-        "bet": 39.58333333333333,
-        "deposit": 6.25,
-        "withdrawal": 52.083333333333336,
-        "inactive": 2.083333333333333,
-        "avg_amt_wd": 228.08333333333334,
-        "avg_amt_bet": 256.7523689007415,
-        "n": 48
+        "bet": 69.78193146417445,
+        "deposit": 5.29595015576324,
+        "withdrawal": 23.98753894080997,
+        "inactive": 0.9345794392523363,
+        "avg_amt_wd": 51.6588785046729,
+        "avg_amt_bet": 62.7561872067337,
+        "n": 321
       },
       "7d": {
-        "bet": 33.33333333333333,
-        "deposit": 6.25,
-        "withdrawal": 58.333333333333336,
-        "inactive": 2.083333333333333,
-        "avg_amt_wd": 435.12375000000003,
-        "avg_amt_bet": 399.41077881296934,
-        "n": 48
+        "bet": 62.928348909657316,
+        "deposit": 7.165109034267912,
+        "withdrawal": 29.283489096573206,
+        "inactive": 0.6230529595015576,
+        "avg_amt_wd": 99.3196261682243,
+        "avg_amt_bet": 114.60003943260362,
+        "n": 321
       }
     },
     "0.5": {
       "1h": {
-        "bet": 36.17021276595745,
-        "deposit": 10.638297872340425,
-        "withdrawal": 2.127659574468085,
-        "inactive": 51.06382978723404,
-        "avg_amt_wd": 0.10638297872340426,
-        "avg_amt_bet": 35.973404255319146,
-        "n": 47
+        "bet": 39.49843260188088,
+        "deposit": 1.5673981191222568,
+        "withdrawal": 0.0,
+        "inactive": 58.93416927899686,
+        "avg_amt_wd": 0.0,
+        "avg_amt_bet": 15.441692789968654,
+        "n": 319
       },
       "6h": {
-        "bet": 42.5531914893617,
-        "deposit": 12.76595744680851,
-        "withdrawal": 12.76595744680851,
-        "inactive": 31.914893617021278,
-        "avg_amt_wd": 22.21276595744681,
-        "avg_amt_bet": 42.660425531914896,
-        "n": 47
+        "bet": 65.51724137931035,
+        "deposit": 3.4482758620689653,
+        "withdrawal": 4.702194357366771,
+        "inactive": 26.332288401253916,
+        "avg_amt_wd": 6.172413793103448,
+        "avg_amt_bet": 21.545705329153606,
+        "n": 319
       },
       "24h": {
-        "bet": 53.191489361702125,
-        "deposit": 10.638297872340425,
-        "withdrawal": 25.53191489361702,
-        "inactive": 10.638297872340425,
-        "avg_amt_wd": 73.40425531914893,
-        "avg_amt_bet": 90.1163829787234,
-        "n": 47
+        "bet": 75.23510971786834,
+        "deposit": 3.761755485893417,
+        "withdrawal": 13.479623824451412,
+        "inactive": 7.523510971786834,
+        "avg_amt_wd": 22.219435736677116,
+        "avg_amt_bet": 27.509184952978057,
+        "n": 319
       },
       "72h": {
-        "bet": 38.297872340425535,
-        "deposit": 6.382978723404255,
-        "withdrawal": 51.06382978723404,
-        "inactive": 4.25531914893617,
-        "avg_amt_wd": 230.46808510638297,
-        "avg_amt_bet": 245.91731291990618,
-        "n": 47
+        "bet": 69.59247648902821,
+        "deposit": 5.329153605015674,
+        "withdrawal": 24.137931034482758,
+        "inactive": 0.9404388714733543,
+        "avg_amt_wd": 53.509404388714735,
+        "avg_amt_bet": 54.66055201680726,
+        "n": 319
       },
       "7d": {
-        "bet": 31.914893617021278,
-        "deposit": 6.382978723404255,
-        "withdrawal": 57.446808510638306,
-        "inactive": 4.25531914893617,
-        "avg_amt_wd": 441.91361702127665,
-        "avg_amt_bet": 391.6110081494155,
-        "n": 47
+        "bet": 63.00940438871473,
+        "deposit": 7.210031347962382,
+        "withdrawal": 29.153605015673982,
+        "inactive": 0.6269592476489028,
+        "avg_amt_wd": 99.45956112852666,
+        "avg_amt_bet": 106.74778262653842,
+        "n": 319
       }
     },
     "0.75": {
       "1h": {
-        "bet": 30.434782608695656,
-        "deposit": 10.869565217391305,
-        "withdrawal": 2.1739130434782608,
-        "inactive": 56.52173913043478,
-        "avg_amt_wd": 0.10869565217391304,
-        "avg_amt_bet": 14.717391304347826,
-        "n": 46
+        "bet": 33.55048859934853,
+        "deposit": 1.3029315960912053,
+        "withdrawal": 0.0,
+        "inactive": 65.14657980456026,
+        "avg_amt_wd": 0.0,
+        "avg_amt_bet": 8.540944625407166,
+        "n": 307
       },
       "6h": {
-        "bet": 43.47826086956522,
-        "deposit": 13.043478260869565,
-        "withdrawal": 13.043478260869565,
-        "inactive": 30.434782608695656,
-        "avg_amt_wd": 22.695652173913043,
-        "avg_amt_bet": 22.093260869565217,
-        "n": 46
+        "bet": 64.16938110749186,
+        "deposit": 3.257328990228013,
+        "withdrawal": 4.88599348534202,
+        "inactive": 27.68729641693811,
+        "avg_amt_wd": 6.413680781758957,
+        "avg_amt_bet": 14.412866449511398,
+        "n": 307
       },
       "24h": {
-        "bet": 47.82608695652174,
-        "deposit": 10.869565217391305,
-        "withdrawal": 28.26086956521739,
-        "inactive": 13.043478260869565,
-        "avg_amt_wd": 76.69565217391305,
-        "avg_amt_bet": 71.01565217391305,
-        "n": 46
+        "bet": 73.61563517915309,
+        "deposit": 3.257328990228013,
+        "withdrawal": 14.65798045602606,
+        "inactive": 8.469055374592834,
+        "avg_amt_wd": 24.08469055374593,
+        "avg_amt_bet": 20.10456026058632,
+        "n": 307
       },
       "72h": {
-        "bet": 36.95652173913043,
-        "deposit": 6.521739130434782,
-        "withdrawal": 52.17391304347826,
-        "inactive": 4.3478260869565215,
-        "avg_amt_wd": 235.47826086956522,
-        "avg_amt_bet": 228.720080592078,
-        "n": 46
+        "bet": 69.38110749185668,
+        "deposit": 5.537459283387622,
+        "withdrawal": 24.104234527687296,
+        "inactive": 0.9771986970684038,
+        "avg_amt_wd": 51.529315960912044,
+        "avg_amt_bet": 46.75806545068898,
+        "n": 307
       },
       "7d": {
-        "bet": 32.608695652173914,
-        "deposit": 6.521739130434782,
-        "withdrawal": 58.69565217391305,
-        "inactive": 2.1739130434782608,
-        "avg_amt_wd": 451.52043478260873,
-        "avg_amt_bet": 377.41233441353324,
-        "n": 46
+        "bet": 63.84364820846905,
+        "deposit": 7.491856677524431,
+        "withdrawal": 28.664495114006517,
+        "inactive": 0.0,
+        "avg_amt_wd": 97.89120521172639,
+        "avg_amt_bet": 99.97000865754319,
+        "n": 307
       }
     },
     "1.0": {
       "1h": {
-        "bet": 23.91304347826087,
-        "deposit": 10.869565217391305,
-        "withdrawal": 2.1739130434782608,
-        "inactive": 63.04347826086957,
-        "avg_amt_wd": 0.10869565217391304,
-        "avg_amt_bet": 11.326086956521738,
-        "n": 46
+        "bet": 30.23255813953488,
+        "deposit": 1.3289036544850499,
+        "withdrawal": 0.0,
+        "inactive": 68.43853820598007,
+        "avg_amt_wd": 0.0,
+        "avg_amt_bet": 4.645215946843854,
+        "n": 301
       },
       "6h": {
-        "bet": 34.78260869565217,
-        "deposit": 10.869565217391305,
-        "withdrawal": 17.391304347826086,
-        "inactive": 36.95652173913043,
-        "avg_amt_wd": 26.565217391304348,
-        "avg_amt_bet": 18.180217391304346,
-        "n": 46
+        "bet": 60.797342192691026,
+        "deposit": 3.6544850498338874,
+        "withdrawal": 4.983388704318937,
+        "inactive": 30.564784053156146,
+        "avg_amt_wd": 6.54485049833887,
+        "avg_amt_bet": 9.719700996677739,
+        "n": 301
       },
       "24h": {
-        "bet": 45.65217391304348,
-        "deposit": 8.695652173913043,
-        "withdrawal": 32.608695652173914,
-        "inactive": 13.043478260869565,
-        "avg_amt_wd": 92.02173913043478,
-        "avg_amt_bet": 82.51565217391304,
-        "n": 46
+        "bet": 72.09302325581395,
+        "deposit": 3.6544850498338874,
+        "withdrawal": 14.61794019933555,
+        "inactive": 9.634551495016613,
+        "avg_amt_wd": 24.372093023255815,
+        "avg_amt_bet": 15.42850498338871,
+        "n": 301
       },
       "72h": {
-        "bet": 36.95652173913043,
-        "deposit": 4.3478260869565215,
-        "withdrawal": 54.347826086956516,
-        "inactive": 4.3478260869565215,
-        "avg_amt_wd": 338.5217391304348,
-        "avg_amt_bet": 245.7183414616433,
-        "n": 46
+        "bet": 69.43521594684385,
+        "deposit": 5.647840531561462,
+        "withdrawal": 23.588039867109632,
+        "inactive": 1.3289036544850499,
+        "avg_amt_wd": 48.83554817275748,
+        "avg_amt_bet": 42.07284416399175,
+        "n": 301
       },
       "7d": {
-        "bet": 32.608695652173914,
-        "deposit": 4.3478260869565215,
-        "withdrawal": 60.86956521739131,
-        "inactive": 2.1739130434782608,
-        "avg_amt_wd": 555.6508695652175,
-        "avg_amt_bet": 394.3471170222289,
-        "n": 46
+        "bet": 64.45182724252491,
+        "deposit": 7.641196013289036,
+        "withdrawal": 27.906976744186046,
+        "inactive": 0.0,
+        "avg_amt_wd": 94.59003322259137,
+        "avg_amt_bet": 95.01990916234472,
+        "n": 301
       }
     }
   },
@@ -857,25 +856,62 @@ const DATA = {
     "7d"
   ],
   "withdraw": {
-    "n_total": 56,
-    "n_with_wd": 38,
-    "pct_with_wd": 67.85714285714286,
-    "wd_before_1x": 5,
-    "wd_1x_2x": 18,
-    "wd_after_2x": 8,
-    "median_hours_dep_to_wd": 30.538717741111114
+    "n_total": 356,
+    "n_with_wd": 133,
+    "pct_with_wd": 37.359550561797754,
+    "wd_before_1x": 12,
+    "wd_1x_2x": 65,
+    "wd_after_2x": 45,
+    "median_hours_dep_to_wd": 45.924504075277774
   },
   "redep": {
     "any": 100.0,
-    "n_with_dep": 49,
-    "24h": 26.53061224489796,
-    "72h": 32.6530612244898,
-    "7d": 36.734693877551024,
-    "14d": 38.775510204081634,
-    "30d": 40.816326530612244
+    "n_with_dep": 355,
+    "24h": 7.887323943661972,
+    "72h": 10.704225352112676,
+    "7d": 14.929577464788732,
+    "14d": 16.056338028169016,
+    "30d": 19.43661971830986
   },
   "cmp": {
     "win": {
+      "target_users (356)": {
+        "1h": {
+          "bet": 34.193548387096776,
+          "deposit": 0.0,
+          "withdrawal": 11.32616487455197,
+          "inactive": 54.48028673835126,
+          "n": 1395
+        },
+        "6h": {
+          "bet": 51.32616487455197,
+          "deposit": 0.9318996415770611,
+          "withdrawal": 18.2078853046595,
+          "inactive": 29.53405017921147,
+          "n": 1395
+        },
+        "24h": {
+          "bet": 53.97849462365591,
+          "deposit": 2.867383512544803,
+          "withdrawal": 30.25089605734767,
+          "inactive": 12.903225806451612,
+          "n": 1395
+        },
+        "72h": {
+          "bet": 44.44444444444444,
+          "deposit": 3.870967741935484,
+          "withdrawal": 44.87455197132616,
+          "inactive": 6.810035842293908,
+          "n": 1395
+        },
+        "7d": {
+          "bet": 36.48745519713262,
+          "deposit": 4.444444444444445,
+          "withdrawal": 54.623655913978496,
+          "inactive": 4.444444444444445,
+          "n": 1395
+        }
+      },
       "flagged (24)": {
         "1h": {
           "bet": 30.681818181818183,
@@ -949,46 +985,46 @@ const DATA = {
           "inactive": 2.803738317757009,
           "n": 214
         }
-      },
-      "target_users (clean)": {
-        "1h": {
-          "bet": 34.193548387096776,
-          "deposit": 0.0,
-          "withdrawal": 11.32616487455197,
-          "inactive": 54.48028673835126,
-          "n": 1395
-        },
-        "6h": {
-          "bet": 51.32616487455197,
-          "deposit": 0.9318996415770611,
-          "withdrawal": 18.2078853046595,
-          "inactive": 29.53405017921147,
-          "n": 1395
-        },
-        "24h": {
-          "bet": 53.97849462365591,
-          "deposit": 2.867383512544803,
-          "withdrawal": 30.25089605734767,
-          "inactive": 12.903225806451612,
-          "n": 1395
-        },
-        "72h": {
-          "bet": 44.44444444444444,
-          "deposit": 3.870967741935484,
-          "withdrawal": 44.87455197132616,
-          "inactive": 6.810035842293908,
-          "n": 1395
-        },
-        "7d": {
-          "bet": 36.48745519713262,
-          "deposit": 4.444444444444445,
-          "withdrawal": 54.623655913978496,
-          "inactive": 4.444444444444445,
-          "n": 1395
-        }
       }
     },
     "loss": {
+      "target_users (356)": {
+        "1h": {
+          "bet": 34.527687296416936,
+          "deposit": 0.32573289902280134,
+          "withdrawal": 4.737933076695292,
+          "inactive": 60.40864672786497,
+          "n": 3377
+        },
+        "6h": {
+          "bet": 44.181225940183595,
+          "deposit": 1.036422860527095,
+          "withdrawal": 7.9952620669233045,
+          "inactive": 46.787089132366006,
+          "n": 3377
+        },
+        "24h": {
+          "bet": 52.47260882440036,
+          "deposit": 5.41901095647024,
+          "withdrawal": 13.473497186852235,
+          "inactive": 28.63488303227717,
+          "n": 3377
+        },
+        "72h": {
+          "bet": 54.16049748297306,
+          "deposit": 6.573882143914717,
+          "withdrawal": 21.79449215279834,
+          "inactive": 17.47112822031389,
+          "n": 3377
+        },
+        "7d": {
+          "bet": 50.192478531240745,
+          "deposit": 11.341427302339355,
+          "withdrawal": 26.56203731122298,
+          "inactive": 11.90405685519692,
+          "n": 3377
+        }
+      },
       "flagged (24)": {
         "1h": {
           "bet": 18.461538461538463,
@@ -1062,46 +1098,199 @@ const DATA = {
           "inactive": 6.571428571428571,
           "n": 350
         }
-      },
-      "target_users (clean)": {
-        "1h": {
-          "bet": 34.527687296416936,
-          "deposit": 0.32573289902280134,
-          "withdrawal": 4.737933076695292,
-          "inactive": 60.40864672786497,
-          "n": 3377
-        },
-        "6h": {
-          "bet": 44.181225940183595,
-          "deposit": 1.036422860527095,
-          "withdrawal": 7.9952620669233045,
-          "inactive": 46.787089132366006,
-          "n": 3377
-        },
-        "24h": {
-          "bet": 52.47260882440036,
-          "deposit": 5.41901095647024,
-          "withdrawal": 13.473497186852235,
-          "inactive": 28.63488303227717,
-          "n": 3377
-        },
-        "72h": {
-          "bet": 54.16049748297306,
-          "deposit": 6.573882143914717,
-          "withdrawal": 21.79449215279834,
-          "inactive": 17.47112822031389,
-          "n": 3377
-        },
-        "7d": {
-          "bet": 50.192478531240745,
-          "deposit": 11.341427302339355,
-          "withdrawal": 26.56203731122298,
-          "inactive": 11.90405685519692,
-          "n": 3377
-        }
       }
     },
     "up": {
+      "target_users (356)": {
+        "1.0": {
+          "1h": {
+            "bet": 23.376623376623375,
+            "deposit": 0.0,
+            "withdrawal": 19.480519480519483,
+            "inactive": 57.14285714285714,
+            "avg_amt_wd": 35.18181818181818,
+            "avg_amt_bet": 3.2675324675324675,
+            "n": 77
+          },
+          "6h": {
+            "bet": 28.57142857142857,
+            "deposit": 1.2987012987012987,
+            "withdrawal": 36.36363636363637,
+            "inactive": 33.76623376623377,
+            "avg_amt_wd": 62.298701298701296,
+            "avg_amt_bet": 20.956363636363633,
+            "n": 77
+          },
+          "24h": {
+            "bet": 29.87012987012987,
+            "deposit": 1.2987012987012987,
+            "withdrawal": 50.649350649350644,
+            "inactive": 18.181818181818183,
+            "avg_amt_wd": 162.12987012987014,
+            "avg_amt_bet": 57.31922077922078,
+            "n": 77
+          },
+          "72h": {
+            "bet": 18.181818181818183,
+            "deposit": 0.0,
+            "withdrawal": 68.83116883116884,
+            "inactive": 12.987012987012985,
+            "avg_amt_wd": 264.3746753246753,
+            "avg_amt_bet": 165.4056696688863,
+            "n": 77
+          },
+          "7d": {
+            "bet": 16.883116883116884,
+            "deposit": 0.0,
+            "withdrawal": 75.32467532467533,
+            "inactive": 7.792207792207792,
+            "avg_amt_wd": 492.30857142857144,
+            "avg_amt_bet": 298.4948904481072,
+            "n": 77
+          }
+        },
+        "2.0": {
+          "1h": {
+            "bet": 22.58064516129032,
+            "deposit": 0.0,
+            "withdrawal": 20.967741935483872,
+            "inactive": 56.451612903225815,
+            "avg_amt_wd": 32.299677419354836,
+            "avg_amt_bet": 3.1129032258064515,
+            "n": 62
+          },
+          "6h": {
+            "bet": 22.58064516129032,
+            "deposit": 1.6129032258064515,
+            "withdrawal": 38.70967741935484,
+            "inactive": 37.096774193548384,
+            "avg_amt_wd": 62.63274193548387,
+            "avg_amt_bet": 14.244838709677419,
+            "n": 62
+          },
+          "24h": {
+            "bet": 25.806451612903224,
+            "deposit": 1.6129032258064515,
+            "withdrawal": 56.451612903225815,
+            "inactive": 16.129032258064516,
+            "avg_amt_wd": 143.3932258064516,
+            "avg_amt_bet": 75.23080645161292,
+            "n": 62
+          },
+          "72h": {
+            "bet": 20.967741935483872,
+            "deposit": 0.0,
+            "withdrawal": 67.74193548387096,
+            "inactive": 11.29032258064516,
+            "avg_amt_wd": 207.68870967741933,
+            "avg_amt_bet": 213.13241935483873,
+            "n": 62
+          },
+          "7d": {
+            "bet": 19.35483870967742,
+            "deposit": 0.0,
+            "withdrawal": 72.58064516129032,
+            "inactive": 8.064516129032258,
+            "avg_amt_wd": 457.4187096774194,
+            "avg_amt_bet": 313.3879991271691,
+            "n": 62
+          }
+        },
+        "3.0": {
+          "1h": {
+            "bet": 21.73913043478261,
+            "deposit": 0.0,
+            "withdrawal": 19.565217391304348,
+            "inactive": 58.69565217391305,
+            "avg_amt_wd": 43.31695652173913,
+            "avg_amt_bet": 2.239130434782609,
+            "n": 46
+          },
+          "6h": {
+            "bet": 17.391304347826086,
+            "deposit": 0.0,
+            "withdrawal": 39.130434782608695,
+            "inactive": 43.47826086956522,
+            "avg_amt_wd": 70.93978260869565,
+            "avg_amt_bet": 5.118695652173913,
+            "n": 46
+          },
+          "24h": {
+            "bet": 26.08695652173913,
+            "deposit": 0.0,
+            "withdrawal": 60.86956521739131,
+            "inactive": 13.043478260869565,
+            "avg_amt_wd": 254.73891304347825,
+            "avg_amt_bet": 87.24108695652174,
+            "n": 46
+          },
+          "72h": {
+            "bet": 19.565217391304348,
+            "deposit": 0.0,
+            "withdrawal": 71.73913043478261,
+            "inactive": 8.695652173913043,
+            "avg_amt_wd": 324.4632608695652,
+            "avg_amt_bet": 223.52152173913046,
+            "n": 46
+          },
+          "7d": {
+            "bet": 19.565217391304348,
+            "deposit": 0.0,
+            "withdrawal": 76.08695652173914,
+            "inactive": 4.3478260869565215,
+            "avg_amt_wd": 559.6513043478261,
+            "avg_amt_bet": 285.20491186705397,
+            "n": 46
+          }
+        },
+        "4.0": {
+          "1h": {
+            "bet": 29.72972972972973,
+            "deposit": 0.0,
+            "withdrawal": 13.513513513513514,
+            "inactive": 56.75675675675676,
+            "avg_amt_wd": 22.216216216216218,
+            "avg_amt_bet": 25.45945945945946,
+            "n": 37
+          },
+          "6h": {
+            "bet": 24.324324324324326,
+            "deposit": 2.7027027027027026,
+            "withdrawal": 35.13513513513514,
+            "inactive": 37.83783783783784,
+            "avg_amt_wd": 55.20675675675676,
+            "avg_amt_bet": 57.773783783783784,
+            "n": 37
+          },
+          "24h": {
+            "bet": 27.027027027027028,
+            "deposit": 0.0,
+            "withdrawal": 62.16216216216216,
+            "inactive": 10.81081081081081,
+            "avg_amt_wd": 165.01756756756757,
+            "avg_amt_bet": 136.40432432432434,
+            "n": 37
+          },
+          "72h": {
+            "bet": 18.91891891891892,
+            "deposit": 0.0,
+            "withdrawal": 72.97297297297297,
+            "inactive": 8.108108108108109,
+            "avg_amt_wd": 239.67486486486484,
+            "avg_amt_bet": 246.54756756756757,
+            "n": 37
+          },
+          "7d": {
+            "bet": 16.216216216216218,
+            "deposit": 2.7027027027027026,
+            "withdrawal": 78.37837837837837,
+            "inactive": 2.7027027027027026,
+            "avg_amt_wd": 532.0708108108108,
+            "avg_amt_bet": 330.26783783783793,
+            "n": 37
+          }
+        }
+      },
       "flagged (24)": {
         "1.0": {
           "1h": {
@@ -1481,199 +1670,199 @@ const DATA = {
             "n": 4
           }
         }
-      },
-      "target_users (clean)": {
-        "1.0": {
-          "1h": {
-            "bet": 23.376623376623375,
-            "deposit": 0.0,
-            "withdrawal": 19.480519480519483,
-            "inactive": 57.14285714285714,
-            "avg_amt_wd": 35.18181818181818,
-            "avg_amt_bet": 3.2675324675324675,
-            "n": 77
-          },
-          "6h": {
-            "bet": 28.57142857142857,
-            "deposit": 1.2987012987012987,
-            "withdrawal": 36.36363636363637,
-            "inactive": 33.76623376623377,
-            "avg_amt_wd": 62.298701298701296,
-            "avg_amt_bet": 20.956363636363637,
-            "n": 77
-          },
-          "24h": {
-            "bet": 29.87012987012987,
-            "deposit": 1.2987012987012987,
-            "withdrawal": 50.649350649350644,
-            "inactive": 18.181818181818183,
-            "avg_amt_wd": 162.12987012987014,
-            "avg_amt_bet": 57.31922077922079,
-            "n": 77
-          },
-          "72h": {
-            "bet": 18.181818181818183,
-            "deposit": 0.0,
-            "withdrawal": 68.83116883116884,
-            "inactive": 12.987012987012985,
-            "avg_amt_wd": 264.37467532467537,
-            "avg_amt_bet": 165.4056696688863,
-            "n": 77
-          },
-          "7d": {
-            "bet": 16.883116883116884,
-            "deposit": 0.0,
-            "withdrawal": 75.32467532467533,
-            "inactive": 7.792207792207792,
-            "avg_amt_wd": 492.30857142857144,
-            "avg_amt_bet": 298.4948904481071,
-            "n": 77
-          }
-        },
-        "2.0": {
-          "1h": {
-            "bet": 22.58064516129032,
-            "deposit": 0.0,
-            "withdrawal": 20.967741935483872,
-            "inactive": 56.451612903225815,
-            "avg_amt_wd": 32.299677419354836,
-            "avg_amt_bet": 3.1129032258064515,
-            "n": 62
-          },
-          "6h": {
-            "bet": 22.58064516129032,
-            "deposit": 1.6129032258064515,
-            "withdrawal": 38.70967741935484,
-            "inactive": 37.096774193548384,
-            "avg_amt_wd": 62.63274193548387,
-            "avg_amt_bet": 14.24483870967742,
-            "n": 62
-          },
-          "24h": {
-            "bet": 25.806451612903224,
-            "deposit": 1.6129032258064515,
-            "withdrawal": 56.451612903225815,
-            "inactive": 16.129032258064516,
-            "avg_amt_wd": 143.3932258064516,
-            "avg_amt_bet": 75.2308064516129,
-            "n": 62
-          },
-          "72h": {
-            "bet": 20.967741935483872,
-            "deposit": 0.0,
-            "withdrawal": 67.74193548387096,
-            "inactive": 11.29032258064516,
-            "avg_amt_wd": 207.68870967741933,
-            "avg_amt_bet": 213.13241935483873,
-            "n": 62
-          },
-          "7d": {
-            "bet": 19.35483870967742,
-            "deposit": 0.0,
-            "withdrawal": 72.58064516129032,
-            "inactive": 8.064516129032258,
-            "avg_amt_wd": 457.4187096774195,
-            "avg_amt_bet": 313.38799912716917,
-            "n": 62
-          }
-        },
-        "3.0": {
-          "1h": {
-            "bet": 21.73913043478261,
-            "deposit": 0.0,
-            "withdrawal": 19.565217391304348,
-            "inactive": 58.69565217391305,
-            "avg_amt_wd": 43.31695652173913,
-            "avg_amt_bet": 2.239130434782609,
-            "n": 46
-          },
-          "6h": {
-            "bet": 17.391304347826086,
-            "deposit": 0.0,
-            "withdrawal": 39.130434782608695,
-            "inactive": 43.47826086956522,
-            "avg_amt_wd": 70.93978260869565,
-            "avg_amt_bet": 5.118695652173913,
-            "n": 46
-          },
-          "24h": {
-            "bet": 26.08695652173913,
-            "deposit": 0.0,
-            "withdrawal": 60.86956521739131,
-            "inactive": 13.043478260869565,
-            "avg_amt_wd": 254.73891304347825,
-            "avg_amt_bet": 87.24108695652174,
-            "n": 46
-          },
-          "72h": {
-            "bet": 19.565217391304348,
-            "deposit": 0.0,
-            "withdrawal": 71.73913043478261,
-            "inactive": 8.695652173913043,
-            "avg_amt_wd": 324.4632608695652,
-            "avg_amt_bet": 223.52152173913043,
-            "n": 46
-          },
-          "7d": {
-            "bet": 19.565217391304348,
-            "deposit": 0.0,
-            "withdrawal": 76.08695652173914,
-            "inactive": 4.3478260869565215,
-            "avg_amt_wd": 559.6513043478262,
-            "avg_amt_bet": 285.20491186705397,
-            "n": 46
-          }
-        },
-        "4.0": {
-          "1h": {
-            "bet": 29.72972972972973,
-            "deposit": 0.0,
-            "withdrawal": 13.513513513513514,
-            "inactive": 56.75675675675676,
-            "avg_amt_wd": 22.216216216216218,
-            "avg_amt_bet": 25.45945945945946,
-            "n": 37
-          },
-          "6h": {
-            "bet": 24.324324324324326,
-            "deposit": 2.7027027027027026,
-            "withdrawal": 35.13513513513514,
-            "inactive": 37.83783783783784,
-            "avg_amt_wd": 55.20675675675676,
-            "avg_amt_bet": 57.773783783783784,
-            "n": 37
-          },
-          "24h": {
-            "bet": 27.027027027027028,
-            "deposit": 0.0,
-            "withdrawal": 62.16216216216216,
-            "inactive": 10.81081081081081,
-            "avg_amt_wd": 165.01756756756757,
-            "avg_amt_bet": 136.40432432432434,
-            "n": 37
-          },
-          "72h": {
-            "bet": 18.91891891891892,
-            "deposit": 0.0,
-            "withdrawal": 72.97297297297297,
-            "inactive": 8.108108108108109,
-            "avg_amt_wd": 239.67486486486484,
-            "avg_amt_bet": 246.54756756756757,
-            "n": 37
-          },
-          "7d": {
-            "bet": 16.216216216216218,
-            "deposit": 2.7027027027027026,
-            "withdrawal": 78.37837837837837,
-            "inactive": 2.7027027027027026,
-            "avg_amt_wd": 532.0708108108108,
-            "avg_amt_bet": 330.2678378378378,
-            "n": 37
-          }
-        }
       }
     },
     "down": {
+      "target_users (356)": {
+        "0.25": {
+          "1h": {
+            "bet": 40.49844236760124,
+            "deposit": 1.557632398753894,
+            "withdrawal": 0.3115264797507788,
+            "inactive": 57.63239875389408,
+            "avg_amt_wd": 0.21806853582554517,
+            "avg_amt_bet": 20.818971962616825,
+            "n": 321
+          },
+          "6h": {
+            "bet": 67.28971962616822,
+            "deposit": 3.4267912772585665,
+            "withdrawal": 4.361370716510903,
+            "inactive": 24.922118380062305,
+            "avg_amt_wd": 6.133956386292835,
+            "avg_amt_bet": 27.196573208722743,
+            "n": 321
+          },
+          "24h": {
+            "bet": 76.01246105919003,
+            "deposit": 3.7383177570093453,
+            "withdrawal": 13.084112149532709,
+            "inactive": 7.165109034267912,
+            "avg_amt_wd": 22.077881619937695,
+            "avg_amt_bet": 34.577009345794394,
+            "n": 321
+          },
+          "72h": {
+            "bet": 69.78193146417445,
+            "deposit": 5.29595015576324,
+            "withdrawal": 23.98753894080997,
+            "inactive": 0.9345794392523363,
+            "avg_amt_wd": 51.6588785046729,
+            "avg_amt_bet": 62.7561872067337,
+            "n": 321
+          },
+          "7d": {
+            "bet": 62.928348909657316,
+            "deposit": 7.165109034267912,
+            "withdrawal": 29.283489096573206,
+            "inactive": 0.6230529595015576,
+            "avg_amt_wd": 99.3196261682243,
+            "avg_amt_bet": 114.60003943260362,
+            "n": 321
+          }
+        },
+        "0.5": {
+          "1h": {
+            "bet": 39.49843260188088,
+            "deposit": 1.5673981191222568,
+            "withdrawal": 0.0,
+            "inactive": 58.93416927899686,
+            "avg_amt_wd": 0.0,
+            "avg_amt_bet": 15.441692789968654,
+            "n": 319
+          },
+          "6h": {
+            "bet": 65.51724137931035,
+            "deposit": 3.4482758620689653,
+            "withdrawal": 4.702194357366771,
+            "inactive": 26.332288401253916,
+            "avg_amt_wd": 6.172413793103448,
+            "avg_amt_bet": 21.545705329153606,
+            "n": 319
+          },
+          "24h": {
+            "bet": 75.23510971786834,
+            "deposit": 3.761755485893417,
+            "withdrawal": 13.479623824451412,
+            "inactive": 7.523510971786834,
+            "avg_amt_wd": 22.219435736677116,
+            "avg_amt_bet": 27.509184952978057,
+            "n": 319
+          },
+          "72h": {
+            "bet": 69.59247648902821,
+            "deposit": 5.329153605015674,
+            "withdrawal": 24.137931034482758,
+            "inactive": 0.9404388714733543,
+            "avg_amt_wd": 53.509404388714735,
+            "avg_amt_bet": 54.66055201680726,
+            "n": 319
+          },
+          "7d": {
+            "bet": 63.00940438871473,
+            "deposit": 7.210031347962382,
+            "withdrawal": 29.153605015673982,
+            "inactive": 0.6269592476489028,
+            "avg_amt_wd": 99.45956112852666,
+            "avg_amt_bet": 106.74778262653842,
+            "n": 319
+          }
+        },
+        "0.75": {
+          "1h": {
+            "bet": 33.55048859934853,
+            "deposit": 1.3029315960912053,
+            "withdrawal": 0.0,
+            "inactive": 65.14657980456026,
+            "avg_amt_wd": 0.0,
+            "avg_amt_bet": 8.540944625407166,
+            "n": 307
+          },
+          "6h": {
+            "bet": 64.16938110749186,
+            "deposit": 3.257328990228013,
+            "withdrawal": 4.88599348534202,
+            "inactive": 27.68729641693811,
+            "avg_amt_wd": 6.413680781758957,
+            "avg_amt_bet": 14.412866449511398,
+            "n": 307
+          },
+          "24h": {
+            "bet": 73.61563517915309,
+            "deposit": 3.257328990228013,
+            "withdrawal": 14.65798045602606,
+            "inactive": 8.469055374592834,
+            "avg_amt_wd": 24.08469055374593,
+            "avg_amt_bet": 20.10456026058632,
+            "n": 307
+          },
+          "72h": {
+            "bet": 69.38110749185668,
+            "deposit": 5.537459283387622,
+            "withdrawal": 24.104234527687296,
+            "inactive": 0.9771986970684038,
+            "avg_amt_wd": 51.529315960912044,
+            "avg_amt_bet": 46.75806545068898,
+            "n": 307
+          },
+          "7d": {
+            "bet": 63.84364820846905,
+            "deposit": 7.491856677524431,
+            "withdrawal": 28.664495114006517,
+            "inactive": 0.0,
+            "avg_amt_wd": 97.89120521172639,
+            "avg_amt_bet": 99.97000865754319,
+            "n": 307
+          }
+        },
+        "1.0": {
+          "1h": {
+            "bet": 30.23255813953488,
+            "deposit": 1.3289036544850499,
+            "withdrawal": 0.0,
+            "inactive": 68.43853820598007,
+            "avg_amt_wd": 0.0,
+            "avg_amt_bet": 4.645215946843854,
+            "n": 301
+          },
+          "6h": {
+            "bet": 60.797342192691026,
+            "deposit": 3.6544850498338874,
+            "withdrawal": 4.983388704318937,
+            "inactive": 30.564784053156146,
+            "avg_amt_wd": 6.54485049833887,
+            "avg_amt_bet": 9.719700996677739,
+            "n": 301
+          },
+          "24h": {
+            "bet": 72.09302325581395,
+            "deposit": 3.6544850498338874,
+            "withdrawal": 14.61794019933555,
+            "inactive": 9.634551495016613,
+            "avg_amt_wd": 24.372093023255815,
+            "avg_amt_bet": 15.42850498338871,
+            "n": 301
+          },
+          "72h": {
+            "bet": 69.43521594684385,
+            "deposit": 5.647840531561462,
+            "withdrawal": 23.588039867109632,
+            "inactive": 1.3289036544850499,
+            "avg_amt_wd": 48.83554817275748,
+            "avg_amt_bet": 42.07284416399175,
+            "n": 301
+          },
+          "7d": {
+            "bet": 64.45182724252491,
+            "deposit": 7.641196013289036,
+            "withdrawal": 27.906976744186046,
+            "inactive": 0.0,
+            "avg_amt_wd": 94.59003322259137,
+            "avg_amt_bet": 95.01990916234472,
+            "n": 301
+          }
+        }
+      },
       "flagged (24)": {
         "0.25": {
           "1h": {
@@ -1899,7 +2088,7 @@ const DATA = {
             "withdrawal": 55.55555555555556,
             "inactive": 0.0,
             "avg_amt_wd": 316.962962962963,
-            "avg_amt_bet": 381.21777777777766,
+            "avg_amt_bet": 381.21777777777777,
             "n": 27
           },
           "7d": {
@@ -1946,7 +2135,7 @@ const DATA = {
             "withdrawal": 53.84615384615385,
             "inactive": 0.0,
             "avg_amt_wd": 324.6923076923077,
-            "avg_amt_bet": 375.1107692307691,
+            "avg_amt_bet": 375.1107692307692,
             "n": 26
           },
           "7d": {
@@ -1955,7 +2144,7 @@ const DATA = {
             "withdrawal": 57.692307692307686,
             "inactive": 0.0,
             "avg_amt_wd": 599.3076923076923,
-            "avg_amt_bet": 626.9699999999999,
+            "avg_amt_bet": 626.97,
             "n": 26
           }
         },
@@ -2002,7 +2191,7 @@ const DATA = {
             "withdrawal": 57.692307692307686,
             "inactive": 0.0,
             "avg_amt_wd": 599.3076923076923,
-            "avg_amt_bet": 603.4796153846153,
+            "avg_amt_bet": 603.4796153846154,
             "n": 26
           }
         },
@@ -2049,198 +2238,8 @@ const DATA = {
             "withdrawal": 57.692307692307686,
             "inactive": 0.0,
             "avg_amt_wd": 599.3076923076923,
-            "avg_amt_bet": 596.5565384615384,
+            "avg_amt_bet": 596.5565384615385,
             "n": 26
-          }
-        }
-      },
-      "target_users (clean)": {
-        "0.25": {
-          "1h": {
-            "bet": 40.49844236760124,
-            "deposit": 1.557632398753894,
-            "withdrawal": 0.3115264797507788,
-            "inactive": 57.63239875389408,
-            "avg_amt_wd": 0.21806853582554517,
-            "avg_amt_bet": 20.81897196261682,
-            "n": 321
-          },
-          "6h": {
-            "bet": 67.28971962616822,
-            "deposit": 3.4267912772585665,
-            "withdrawal": 4.361370716510903,
-            "inactive": 24.922118380062305,
-            "avg_amt_wd": 6.133956386292835,
-            "avg_amt_bet": 27.196573208722736,
-            "n": 321
-          },
-          "24h": {
-            "bet": 76.01246105919003,
-            "deposit": 3.7383177570093453,
-            "withdrawal": 13.084112149532709,
-            "inactive": 7.165109034267912,
-            "avg_amt_wd": 22.077881619937695,
-            "avg_amt_bet": 34.57700934579439,
-            "n": 321
-          },
-          "72h": {
-            "bet": 69.78193146417445,
-            "deposit": 5.29595015576324,
-            "withdrawal": 23.98753894080997,
-            "inactive": 0.9345794392523363,
-            "avg_amt_wd": 51.6588785046729,
-            "avg_amt_bet": 62.756187206733706,
-            "n": 321
-          },
-          "7d": {
-            "bet": 62.928348909657316,
-            "deposit": 7.165109034267912,
-            "withdrawal": 29.283489096573206,
-            "inactive": 0.6230529595015576,
-            "avg_amt_wd": 99.3196261682243,
-            "avg_amt_bet": 114.60003943260362,
-            "n": 321
-          }
-        },
-        "0.5": {
-          "1h": {
-            "bet": 39.49843260188088,
-            "deposit": 1.5673981191222568,
-            "withdrawal": 0.0,
-            "inactive": 58.93416927899686,
-            "avg_amt_wd": 0.0,
-            "avg_amt_bet": 15.44169278996865,
-            "n": 319
-          },
-          "6h": {
-            "bet": 65.51724137931035,
-            "deposit": 3.4482758620689653,
-            "withdrawal": 4.702194357366771,
-            "inactive": 26.332288401253916,
-            "avg_amt_wd": 6.172413793103448,
-            "avg_amt_bet": 21.545705329153606,
-            "n": 319
-          },
-          "24h": {
-            "bet": 75.23510971786834,
-            "deposit": 3.761755485893417,
-            "withdrawal": 13.479623824451412,
-            "inactive": 7.523510971786834,
-            "avg_amt_wd": 22.219435736677116,
-            "avg_amt_bet": 27.509184952978057,
-            "n": 319
-          },
-          "72h": {
-            "bet": 69.59247648902821,
-            "deposit": 5.329153605015674,
-            "withdrawal": 24.137931034482758,
-            "inactive": 0.9404388714733543,
-            "avg_amt_wd": 53.509404388714735,
-            "avg_amt_bet": 54.66055201680727,
-            "n": 319
-          },
-          "7d": {
-            "bet": 63.00940438871473,
-            "deposit": 7.210031347962382,
-            "withdrawal": 29.153605015673982,
-            "inactive": 0.6269592476489028,
-            "avg_amt_wd": 99.45956112852666,
-            "avg_amt_bet": 106.74778262653845,
-            "n": 319
-          }
-        },
-        "0.75": {
-          "1h": {
-            "bet": 33.55048859934853,
-            "deposit": 1.3029315960912053,
-            "withdrawal": 0.0,
-            "inactive": 65.14657980456026,
-            "avg_amt_wd": 0.0,
-            "avg_amt_bet": 8.540944625407167,
-            "n": 307
-          },
-          "6h": {
-            "bet": 64.16938110749186,
-            "deposit": 3.257328990228013,
-            "withdrawal": 4.88599348534202,
-            "inactive": 27.68729641693811,
-            "avg_amt_wd": 6.413680781758957,
-            "avg_amt_bet": 14.412866449511398,
-            "n": 307
-          },
-          "24h": {
-            "bet": 73.61563517915309,
-            "deposit": 3.257328990228013,
-            "withdrawal": 14.65798045602606,
-            "inactive": 8.469055374592834,
-            "avg_amt_wd": 24.08469055374593,
-            "avg_amt_bet": 20.10456026058632,
-            "n": 307
-          },
-          "72h": {
-            "bet": 69.38110749185668,
-            "deposit": 5.537459283387622,
-            "withdrawal": 24.104234527687296,
-            "inactive": 0.9771986970684038,
-            "avg_amt_wd": 51.529315960912044,
-            "avg_amt_bet": 46.758065450688974,
-            "n": 307
-          },
-          "7d": {
-            "bet": 63.84364820846905,
-            "deposit": 7.491856677524431,
-            "withdrawal": 28.664495114006517,
-            "inactive": 0.0,
-            "avg_amt_wd": 97.89120521172639,
-            "avg_amt_bet": 99.97000865754322,
-            "n": 307
-          }
-        },
-        "1.0": {
-          "1h": {
-            "bet": 30.23255813953488,
-            "deposit": 1.3289036544850499,
-            "withdrawal": 0.0,
-            "inactive": 68.43853820598007,
-            "avg_amt_wd": 0.0,
-            "avg_amt_bet": 4.645215946843854,
-            "n": 301
-          },
-          "6h": {
-            "bet": 60.797342192691026,
-            "deposit": 3.6544850498338874,
-            "withdrawal": 4.983388704318937,
-            "inactive": 30.564784053156146,
-            "avg_amt_wd": 6.54485049833887,
-            "avg_amt_bet": 9.71970099667774,
-            "n": 301
-          },
-          "24h": {
-            "bet": 72.09302325581395,
-            "deposit": 3.6544850498338874,
-            "withdrawal": 14.61794019933555,
-            "inactive": 9.634551495016613,
-            "avg_amt_wd": 24.372093023255815,
-            "avg_amt_bet": 15.428504983388706,
-            "n": 301
-          },
-          "72h": {
-            "bet": 69.43521594684385,
-            "deposit": 5.647840531561462,
-            "withdrawal": 23.588039867109632,
-            "inactive": 1.3289036544850499,
-            "avg_amt_wd": 48.83554817275747,
-            "avg_amt_bet": 42.072844163991746,
-            "n": 301
-          },
-          "7d": {
-            "bet": 64.45182724252491,
-            "deposit": 7.641196013289036,
-            "withdrawal": 27.906976744186046,
-            "inactive": 0.0,
-            "avg_amt_wd": 94.59003322259137,
-            "avg_amt_bet": 95.01990916234473,
-            "n": 301
           }
         }
       }
